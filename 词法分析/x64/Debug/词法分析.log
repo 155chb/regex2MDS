@@ -1,0 +1,3 @@
+﻿  main.cpp
+C:\Users\DELL\Desktop\compile\lab\正则表达式转DFA\词法分析\strFormat.h(13,10): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  词法分析.vcxproj -> C:\Users\DELL\Desktop\compile\lab\正则表达式转DFA\词法分析\x64\Debug\词法分析.exe
