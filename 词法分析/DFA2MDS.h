@@ -5,6 +5,8 @@
 
 extern int stateListDFA[STATELISTSIZE_DFA][128];
 extern int DFA2MDS[STATELISTSIZE_DFA];
+extern listNode endStateIndexListHeadDFA;
+extern listNode endStateIndexListHeadMDS;
 extern int getStateListSizeDFA();
 extern int newStateMDS();
 extern int connectStateMDS(int srcIndex, int dstIndex, int input);
@@ -22,8 +24,9 @@ int initDFA2MDS() {
 				if (flag)	// 如果发现可区分，就去退出循环检查下一个 
 					break;
 			}
-			if (!flag) {
+			if (!flag && (searchData(&endStateIndexListHeadDFA, i) == searchData(&endStateIndexListHeadDFA, j))) {
 				// 如果找到了不可区分的就可以标记并退出循环了
+				// 这里再判断一下它们是不是都属于非终态或都属于终态
 				DFA2MDS[i] = DFA2MDS[j];
 				break;
 			}

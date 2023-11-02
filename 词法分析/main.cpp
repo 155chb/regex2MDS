@@ -24,6 +24,8 @@ extern int createNFA(int& startStateIndex, int& endStateIndex);
 extern int initStateListDFA();
 extern int freeStateListDFA();
 extern int printfStateDFA();
+extern int printfDFA2NFASet();
+extern int printfDFA2MDS();
 
 /* NFA2DFA.h */
 extern int createDFA(int startStateIndex, int endStateIndex);
@@ -56,6 +58,7 @@ int Regex() {
 	printfData(&endStateIndexListHeadDFA);
 	printf("\n");
 	printfStateDFA();
+	printfDFA2NFASet();
 	printf("---------------------MDS---------------------\n");
 	createMDS();
 	printf("startStateIndex:0\n");
@@ -63,6 +66,7 @@ int Regex() {
 	printfData(&endStateIndexListHeadMDS);
 	printf("\n");
 	printfStateMDS();
+	printfDFA2MDS();
 	return 0;
 }
 

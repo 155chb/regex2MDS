@@ -69,3 +69,21 @@ int printfStateDFA() {
 	}
 	return 0;
 }
+
+
+int printfDFA2NFASet() {
+	for (int i = 0; i < getStateListSizeDFA(); i++) {
+		printf("DFA2NFASet[%d]:\t", i);
+		printfData(&DFA2NFASetHead[i]);
+		cout << endl;
+	}
+	return 0;
+}
+
+
+int printfDFA2MDS() {
+	for (int i = 0; i < stateListSizeDFA; i++) {
+		printf("DFA:%5d\tMDS:%5d\n", i, DFA2MDS[i]);
+	}
+	return 0;
+}

@@ -109,13 +109,14 @@ int do_0(int& startStateIndex, int& endStateIndex) {
 		endStateIndex = endIndex2;
 	}
 	else if (productionIndex1 == 1) {
-		// 产生式为1时，说明E1为E0 |，为了尽量减少新状态的创建
-		// 将E0的开始状态和结束状态设置为E2的开始状态和结束状态
-		// 然后将E0的开始状态连接到E1的开始状态，将E1的结束状态连接到E0的结束状态
-		startStateIndex = startIndex2;
-		endStateIndex = endIndex2;
+		// 产生式为1时，说明E1为E0 |，新建两个节点，然后连接
+		// 这里之前自以为是，改了一下，果然出问题了，人麻了，所以改回了课上讲的方法
+		startStateIndex = newStateNFA();
+		endStateIndex = newStateNFA();
 		connectStateNFA(startStateIndex, startIndex1, '\0');
+		connectStateNFA(startStateIndex, startIndex2, '\0');
 		connectStateNFA(endIndex1, endStateIndex, '\0');
+		connectStateNFA(endIndex2, endStateIndex, '\0');
 	}
 	else if (productionIndex1 == 2) {
 		// 产生式为2时，说明E1为E0，需要将E1和E2拼接起来
