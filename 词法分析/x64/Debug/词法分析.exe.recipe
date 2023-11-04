@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\Users\DELL\Desktop\compile\lab\正则表达式转DFA\词法分析\x64\Debug\词法分析.exe</FullPath>
+      <FullPath>C:\Users\DELL\Desktop\compile\lab\regex2MDS\词法分析\x64\Debug\词法分析.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />
